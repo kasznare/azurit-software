@@ -111,20 +111,32 @@
             width: calc(100% + 1.3px);
             height: 65px;
         }
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: -10px;  /* Compensate for the box margins */
+        }
         .box {
-            float: left;
-            width: calc(33.33% - 20px);
+            flex-basis: calc(33.33% - 20px);
+            margin: 10px;
             padding: 20px;
             text-align: center;
             background-color: var(--card-bg);
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .box:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .box {
+                flex-basis: 100%;
+            }
         }
         footer {
             padding: 20px;
@@ -251,6 +263,11 @@
     </section>
 
     <section id="about">
+           <div class="wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" fill="#f3f4f6"></path>
+            </svg>
+        </div>
         <div class="container">
             <h2>About Us</h2>
             <p>Azurit Software is a leading software development company dedicated to delivering innovative solutions for businesses of all sizes. With our team of expert developers and cutting-edge technologies, we strive to empower our clients with custom software that drives growth and efficiency.</p>
@@ -258,43 +275,17 @@
     </section>
 
     <section id="testimonials">
-        <div class="wave-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" fill="#f3f4f6"></path>
-            </svg>
-        </div>
+     
         <div class="container">
             <h2>What Our Clients Say</h2>
             <div class="testimonial">
                 <p>"Azurit Software transformed our business with their custom software solution. Their team's expertise and professionalism are unmatched."</p>
-                <p><strong>- John Doe, CEO of XYZ Corp</strong></p>
+                <p><strong>- John, CEO</strong></p>
             </div>
             <div class="testimonial">
                 <p>"The Revit extension developed by Azurit has significantly improved our workflow efficiency. Highly recommended!"</p>
-                <p><strong>- Jane Smith, Lead Architect at ABC Designs</strong></p>
+                <p><strong>- Jane, Lead Architect at Designs</strong></p>
             </div>
-        </div>
-    </section>
-     <section id="contact">
-        <div class="wave-top">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" fill="#f3f4f6"></path>
-            </svg>
-        </div>
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form class="contact-form" action="#" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <select name="subject" required>
-                    <option value="">Select a Subject</option>
-                    <option value="general">General Inquiry</option>
-                    <option value="support">Technical Support</option>
-                    <option value="sales">Sales</option>
-                </select>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
         </div>
     </section>
 
